@@ -1,8 +1,7 @@
 class Event(object):
     def __init__(self):
         self.pool = {}
-    
-    
+        
     def on(self,event, callback):
         if self.pool.get(event,None) is None:self.pool[event] = []
         self.pool[event].append(callback)
@@ -12,6 +11,7 @@ class Event(object):
         if self.pool[event]:
             for fn in self.pool[event]:
                 fn(*args,**keywords)
+
 
 event = Event()
 
