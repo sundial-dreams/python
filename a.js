@@ -12,4 +12,12 @@ async function main () {
 
 main()
 
+function *gen(){
+
+    yield 12;
+	
+
+}
+t = gen()
+t.next()
 
